@@ -30,6 +30,7 @@ public class SmoothInputLayoutActivity extends BaseActivity implements View.OnCl
     @Override
     protected void initResource(Bundle savedInstanceState) {
         setSupportActionBar(R.id.smoothinputlayout_toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         lytContent = (SmoothInputLayout) findViewById(R.id.sil_lyt_content);
         btnVoice = findViewById(R.id.sil_ibtn_voice);
         edtInput = (EditText) findViewById(R.id.sil_edt_input);
@@ -146,7 +147,6 @@ public class SmoothInputLayoutActivity extends BaseActivity implements View.OnCl
         vEmoji.setVisibility(View.GONE);
         vMore.setVisibility(View.VISIBLE);
         lytContent.showInputPane(false);
-        btnEmoji.setSelected(false);
     }
 
     private void sendMessage() {
@@ -188,6 +188,9 @@ public class SmoothInputLayoutActivity extends BaseActivity implements View.OnCl
     public boolean onTouch(View view, MotionEvent motionEvent) {
         switch (view.getId()) {
             case R.id.sil_v_list:
+                btnVoice.setSelected(false);
+                btnEmoji.setSelected(false);
+                btnMore.setSelected(false);
                 lytContent.closeKeyboard(true);
                 lytContent.closeInputPane();
                 break;
