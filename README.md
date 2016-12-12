@@ -12,7 +12,7 @@ minSdkVersion 4
 ```java
 dependencies {
     ⋯
-    compile 'am.widget:smoothinputlayout:1.1.0'
+    compile 'am.widget:smoothinputlayout:1.1.1'
     ⋯
 }
 ```
@@ -145,4 +145,5 @@ lytContent.showInputPane(true);//显示面板
 - 控件按钮间的逻辑关系参照样例Activity
 
 ## 历史
+- [**1.1.0**](https://bintray.com/alexmofer/maven/SmoothInputLayout/1.1.0)
 - [**1.0.0**](https://bintray.com/alexmofer/maven/SmoothInputLayout/1.0.0)
