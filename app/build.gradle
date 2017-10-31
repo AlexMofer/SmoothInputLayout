@@ -1,19 +1,17 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.1"
+    compileSdkVersion 27
     defaultConfig {
         applicationId "am.example.smoothinputlayout"
-        minSdkVersion 9
-        targetSdkVersion 25
+        minSdkVersion 14
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
     }
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:25.0.1'
-    compile 'com.android.support:design:25.0.1'
-    compile project(':smoothinputlayout')
+    implementation 'com.android.support:appcompat-v7:27.0.0'
+    implementation 'am.widget:smoothinputlayout:1.1.2'
 }

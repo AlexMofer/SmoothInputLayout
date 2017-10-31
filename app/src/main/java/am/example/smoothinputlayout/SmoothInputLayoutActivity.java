@@ -1,6 +1,9 @@
 package am.example.smoothinputlayout;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MotionEvent;
@@ -10,7 +13,8 @@ import android.widget.Toast;
 
 import am.widget.smoothinputlayout.SmoothInputLayout;
 
-public class SmoothInputLayoutActivity extends BaseActivity implements View.OnClickListener,
+@SuppressWarnings("all")
+public class SmoothInputLayoutActivity extends AppCompatActivity implements View.OnClickListener,
         View.OnTouchListener, TextWatcher, SmoothInputLayout.OnVisibilityChangeListener{
 
     private SmoothInputLayout lytContent;
@@ -22,18 +26,27 @@ public class SmoothInputLayoutActivity extends BaseActivity implements View.OnCl
     private View btnSend;
     private View vEmoji;
     private View vMore;
-    @Override
-    protected int getContentViewLayoutResources() {
-        return R.layout.activity_smoothinputlayout;
-    }
 
     @Override
-    protected void initResource(Bundle savedInstanceState) {
-        setSupportActionBar(R.id.smoothinputlayout_toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        lytContent = (SmoothInputLayout) findViewById(R.id.sil_lyt_content);
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_smoothinputlayout);
+        Toolbar mToolbar = findViewById(R.id.smoothinputlayout_toolbar);
+        if (mToolbar != null) {
+            setSupportActionBar(mToolbar);
+            mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onBackPressed();
+                }
+            });
+            if (getSupportActionBar() != null) {
+                getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+            }
+        }
+        lytContent = findViewById(R.id.sil_lyt_content);
         btnVoice = findViewById(R.id.sil_ibtn_voice);
-        edtInput = (EditText) findViewById(R.id.sil_edt_input);
+        edtInput = findViewById(R.id.sil_edt_input);
         btnEmoji = findViewById(R.id.sil_ibtn_emoji);
         btnSendVoice = findViewById(R.id.sil_btn_send_voice);
         btnMore = findViewById(R.id.sil_ibtn_more);

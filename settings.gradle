@@ -1,1 +1,1 @@
-include ':app', ":smoothinputlayout"
+include ':app'
