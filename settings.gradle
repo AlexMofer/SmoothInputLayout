@@ -1,1 +1,3 @@
+rootProject.name = "SmoothInputLayout"
 include ':app'
+include ':smoothinputlayout'

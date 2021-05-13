@@ -1,13 +1,3 @@
 <resources>
     <string name="app_name">SmoothInputLayout</string>
-    <string name="smoothinputlayout_title">输入面板</string>
-    <string name="smoothinputlayout_voice">按住 说话</string>
-    <string name="smoothinputlayout_picture">图片</string>
-    <string name="smoothinputlayout_take_photo">拍照</string>
-
-    <string name="cd_smoothinputlayout_voice">语音</string>
-    <string name="cd_smoothinputlayout_emoji">Emoji</string>
-    <string name="cd_smoothinputlayout_more">更多</string>
-    <string name="cd_smoothinputlayout_send">发送消息</string>
-
 </resources>
